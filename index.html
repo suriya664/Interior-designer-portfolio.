@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Designer Portfolio | Concrete Chic</title>
+    <meta name="description" content="Award-winning interior designer transforming spaces into art. Specializing in residential and commercial design.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon.svg">
+    <link rel="shortcut icon" href="./favicon.svg">
+    <link rel="apple-touch-icon" href="./favicon.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <span class="logo-text">CONCRETE</span>
+                    <span class="logo-accent">CHIC</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li class="mobile-auth-item"><a href="login.html" class="nav-link">Login</a></li>
+                    <li class="mobile-auth-item"><a href="register.html" class="nav-link">Register</a></li>
+                    <li class="mobile-dashboard-item"><a href="dashboard.html" class="nav-link mobile-dashboard-btn">Dashboard</a></li>
+                    <li class="mobile-cta-item"><a href="#contact" class="nav-link mobile-cta-btn">Consultation</a></li>
+                </ul>
+                <div class="nav-auth-buttons">
+                    <a href="dashboard.html" class="nav-auth-btn dashboard-btn">Dashboard</a>
+                    <a href="login.html" class="nav-auth-btn login-btn">Login</a>
+                    <a href="register.html" class="nav-auth-btn register-btn">Register</a>
+                     
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&q=80" alt="Interior Design" class="hero-image">
+        </div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="hero-title">Transforming Spaces<br>Into Art</h1>
+            <p class="hero-subtitle">Award-Winning Interior Design</p>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                <a href="#contact" class="btn btn-secondary">Get Started</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-image" data-aos="fade-right">
+                    <div class="image-frame">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80" alt="Designer">
+                        <div class="image-accent"></div>
+                    </div>
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="about-intro">With over 15 years of experience in transforming spaces, I bring a unique blend of architectural precision and artistic vision to every project.</p>
+                    <p class="about-text">My design philosophy centers on creating harmonious spaces that reflect the client's personality while maintaining functionality and aesthetic appeal. Each project is a collaboration, a journey from concept to reality.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">200+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">25+</span>
+                            <span class="stat-label">Awards Won</span>
+                        </div>
+                    </div>
+                    <div class="awards-grid">
+                        <div class="award-card">
+                            <i class="fas fa-trophy"></i>
+                            <h4>ASID Award</h4>
+                            <p>2023</p>
+                        </div>
+                        <div class="award-card">
+                            <i class="fas fa-medal"></i>
+                            <h4>Best Residential</h4>
+                            <p>2022</p>
+                        </div>
+                        <div class="award-card">
+                            <i class="fas fa-star"></i>
+                            <h4>Design Excellence</h4>
+                            <p>2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title center" data-aos="fade-up">What We Offer</h2>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Residential Design</h3>
+                    <p>Transform your home into a sanctuary that reflects your lifestyle and personality. From single rooms to complete home renovations.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Commercial Spaces</h3>
+                    <p>Create inspiring work environments that boost productivity and reflect your brand identity. Offices, retail, hospitality spaces.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3>Space Planning</h3>
+                    <p>Optimize your space for maximum functionality and flow. Expert analysis and strategic layout design for any space.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>3D Visualization</h3>
+                    <p>See your design come to life before construction begins. Photorealistic 3D renders and virtual walkthroughs.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3>Furniture Selection</h3>
+                    <p>Curated furniture and decor selections tailored to your style and budget. Access to exclusive designer collections.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Project Management</h3>
+                    <p>End-to-end project coordination from concept to completion. Seamless execution with trusted contractor network.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESIGN PROCESS -->
+    <section id="process" class="process">
+        <div class="container">
+            <h2 class="section-title center" data-aos="fade-up">Our Design Process</h2>
+            <div class="process-timeline">
+                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">01</div>
+                    <div class="step-icon"><i class="fas fa-comments"></i></div>
+                    <h3>Consultation</h3>
+                    <p>Initial meeting to understand your vision, lifestyle, and requirements. We discuss goals, budget, and timeline.</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">02</div>
+                    <div class="step-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Concept Development</h3>
+                    <p>Creating initial design concepts and mood boards. Presenting ideas that align with your aesthetic preferences.</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">03</div>
+                    <div class="step-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h3>Design Planning</h3>
+                    <p>Detailed floor plans, material selections, and 3D visualizations. Refining every detail before implementation.</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-number">04</div>
+                    <div class="step-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Implementation</h3>
+                    <p>Overseeing construction and installation. Coordinating with contractors and ensuring quality execution.</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="500">
+                    <div class="step-number">05</div>
+                    <div class="step-icon"><i class="fas fa-star"></i></div>
+                    <h3>Final Reveal</h3>
+                    <p>The moment of transformation. Styling and final touches to create the perfect finished space.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title center" data-aos="fade-up">Featured Projects</h2>
+            <div class="portfolio-filters" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="hospitality">Hospitality</button>
+                <button class="filter-btn" data-filter="modern">Modern</button>
+                <button class="filter-btn" data-filter="classic">Classic</button>
+            </div>
+            <div class="portfolio-grid" id="portfolioGrid">
+                <div class="portfolio-item" data-category="residential modern" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80" alt="Modern Living Room">
+                    <div class="portfolio-overlay">
+                        <h3>Modern Minimalist</h3>
+                        <p>Residential</p>
+                        <button class="view-details" data-image="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&q=80">View Details</button>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="commercial modern" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Office Space">
+                    <div class="portfolio-overlay">
+                        <h3>Corporate Headquarters</h3>
+                        <p>Commercial</p>
+                        <button class="view-details" data-image="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80">View Details</button>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="residential classic" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" alt="Classic Interior">
+                    <div class="portfolio-overlay">
+                        <h3>Elegant Classic</h3>
+                        <p>Residential</p>
+                        <button class="view-details" data-image="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1920&q=80">View Details</button>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="hospitality modern" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Hotel Lobby">
+                    <div class="portfolio-overlay">
+                        <h3>Luxury Hotel</h3>
+                        <p>Hospitality</p>
+                        <button class="view-details" data-image="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=80">View Details</button>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="residential modern" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80" alt="Contemporary Home">
+                    <div class="portfolio-overlay">
+                        <h3>Contemporary Living</h3>
+                        <p>Residential</p>
+                        <button class="view-details" data-image="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1920&q=80">View Details</button>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="commercial modern" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80" alt="Modern Office">
+                    <div class="portfolio-overlay">
+                        <h3>Creative Workspace</h3>
+                        <p>Commercial</p>
+                        <button class="view-details" data-image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&q=80">View Details</button>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="residential classic" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=800&q=80" alt="Traditional Design">
+                    <div class="portfolio-overlay">
+                        <h3>Traditional Elegance</h3>
+                        <p>Residential</p>
+                        <button class="view-details" data-image="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=1920&q=80">View Details</button>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="hospitality modern" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80" alt="Restaurant">
+                    <div class="portfolio-overlay">
+                        <h3>Fine Dining</h3>
+                        <p>Hospitality</p>
+                        <button class="view-details" data-image="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1920&q=80">View Details</button>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="residential modern" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80" alt="Modern Kitchen">
+                    <div class="portfolio-overlay">
+                        <h3>Gourmet Kitchen</h3>
+                        <p>Residential</p>
+                        <button class="view-details" data-image="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1920&q=80">View Details</button>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="commercial modern" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80" alt="Retail Space">
+                    <div class="portfolio-overlay">
+                        <h3>Boutique Store</h3>
+                        <p>Commercial</p>
+                        <button class="view-details" data-image="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1920&q=80">View Details</button>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="residential classic" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80" alt="Classic Bedroom">
+                    <div class="portfolio-overlay">
+                        <h3>Master Suite</h3>
+                        <p>Residential</p>
+                        <button class="view-details" data-image="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1920&q=80">View Details</button>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="hospitality modern" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80" alt="Luxury Suite">
+                    <div class="portfolio-overlay">
+                        <h3>Penthouse Suite</h3>
+                        <p>Hospitality</p>
+                        <button class="view-details" data-image="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&q=80">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <img src="" alt="Project" id="lightboxImage">
+        </div>
+    </div>
+
+    <!-- BEFORE & AFTER SECTION -->
+    <section id="transformations" class="transformations">
+        <div class="container">
+            <h2 class="section-title center" data-aos="fade-up">Transformations</h2>
+            <div class="transformations-grid">
+                <div class="transformation-item" data-aos="fade-up">
+                    <div class="comparison-slider">
+                        <div class="before-after">
+                            <div class="before">
+                                <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80" alt="Before">
+                                <span class="label">Before</span>
+                            </div>
+                            <div class="after">
+                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80" alt="After">
+                                <span class="label">After</span>
+                            </div>
+                            <input type="range" class="slider" min="0" max="100" value="50">
+                        </div>
+                        <h3>Modern Living Room</h3>
+                        <p>Complete transformation of a 1980s living space into a contemporary minimalist haven.</p>
+                    </div>
+                </div>
+                <div class="transformation-item" data-aos="fade-up">
+                    <div class="comparison-slider">
+                        <div class="before-after">
+                            <div class="before">
+                                <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80" alt="Before">
+                                <span class="label">Before</span>
+                            </div>
+                            <div class="after">
+                                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="After">
+                                <span class="label">After</span>
+                            </div>
+                            <input type="range" class="slider" min="0" max="100" value="50">
+                        </div>
+                        <h3>Corporate Office</h3>
+                        <p>Redesigning a traditional office space into a modern, collaborative work environment.</p>
+                    </div>
+                </div>
+                <div class="transformation-item" data-aos="fade-up">
+                    <div class="comparison-slider">
+                        <div class="before-after">
+                            <div class="before">
+                                <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80" alt="Before">
+                                <span class="label">Before</span>
+                            </div>
+                            <div class="after">
+                                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" alt="After">
+                                <span class="label">After</span>
+                            </div>
+                            <input type="range" class="slider" min="0" max="100" value="50">
+                        </div>
+                        <h3>Classic Kitchen</h3>
+                        <p>Renovating a dated kitchen into an elegant, functional culinary workspace.</p>
+                    </div>
+                </div>
+                <div class="transformation-item" data-aos="fade-up">
+                    <div class="comparison-slider">
+                        <div class="before-after">
+                            <div class="before">
+                                <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80" alt="Before">
+                                <span class="label">Before</span>
+                            </div>
+                            <div class="after">
+                                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="After">
+                                <span class="label">After</span>
+                            </div>
+                            <input type="range" class="slider" min="0" max="100" value="50">
+                        </div>
+                        <h3>Luxury Bedroom</h3>
+                        <p>Creating a serene master suite with custom built-ins and premium finishes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STYLE GUIDE SECTION -->
+    <section id="styles" class="styles">
+        <div class="container">
+            <h2 class="section-title center" data-aos="fade-up">Design Aesthetics</h2>
+            <div class="styles-grid">
+                <div class="style-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="style-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80" alt="Modern Minimalist">
+                    </div>
+                    <div class="style-content">
+                        <h3>Modern Minimalist</h3>
+                        <p>Clean lines, neutral palettes, and functional beauty. Less is more.</p>
+                    </div>
+                </div>
+                <div class="style-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="style-image">
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" alt="Contemporary Luxury">
+                    </div>
+                    <div class="style-content">
+                        <h3>Contemporary Luxury</h3>
+                        <p>Opulent materials meet modern design. Sophisticated and timeless.</p>
+                    </div>
+                </div>
+                <div class="style-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="style-image">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Industrial Chic">
+                    </div>
+                    <div class="style-content">
+                        <h3>Industrial Chic</h3>
+                        <p>Raw materials, exposed elements, and urban sophistication.</p>
+                    </div>
+                </div>
+                <div class="style-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="style-image">
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80" alt="Scandinavian">
+                    </div>
+                    <div class="style-content">
+                        <h3>Scandinavian</h3>
+                        <p>Light, airy spaces with natural materials and hygge comfort.</p>
+                    </div>
+                </div>
+                <div class="style-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="style-image">
+                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=800&q=80" alt="Bohemian">
+                    </div>
+                    <div class="style-content">
+                        <h3>Bohemian</h3>
+                        <p>Eclectic mix of patterns, textures, and global influences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title center" data-aos="fade-up">Client Testimonials</h2>
+            <div class="testimonials-carousel" id="testimonialsCarousel">
+                <div class="testimonial-card active" data-aos="fade-up">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Working with this designer was an absolute dream. Our home transformation exceeded all expectations. The attention to detail and creative vision brought our space to life in ways we never imagined."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Sarah Johnson">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>Residential Project</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The commercial space redesign completely transformed our office culture. The open, modern design has increased collaboration and employee satisfaction. Highly professional and creative team."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Michael Chen">
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <p>Commercial Project</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"From concept to completion, the process was seamless. The 3D visualizations helped us visualize the final result, and the execution was flawless. Our new space is stunning!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Emily Rodriguez">
+                        <div>
+                            <h4>Emily Rodriguez</h4>
+                            <p>Hospitality Project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" id="prevTestimonial"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+                <button class="carousel-btn next" id="nextTestimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENTS SECTION -->
+    <section id="clients" class="clients">
+        <div class="container">
+            <h2 class="section-title center" data-aos="fade-up">As Featured In</h2>
+            <div class="clients-logos" data-aos="fade-up">
+                <div class="client-logo">
+                    <i class="fas fa-newspaper"></i>
+                    <span>Architectural Digest</span>
+                </div>
+                <div class="client-logo">
+                    <i class="fas fa-book"></i>
+                    <span>Elle Decor</span>
+                </div>
+                <div class="client-logo">
+                    <i class="fas fa-house-user"></i>
+                    <span>House Beautiful</span>
+                </div>
+                <div class="client-logo">
+                    <i class="fas fa-globe"></i>
+                    <span>Design Milk</span>
+                </div>
+                <div class="client-logo">
+                    <i class="fas fa-camera"></i>
+                    <span>Dwell</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATISTICS SECTION -->
+    <section id="stats" class="stats">
+        <div class="stats-background">
+            <div class="stats-overlay"></div>
+            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&q=80" alt="Stats Background" class="stats-image">
+        </div>
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="stat-value" data-target="200" data-suffix="+">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-box" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon"><i class="fas fa-smile"></i></div>
+                    <div class="stat-value" data-target="180" data-suffix="+">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-box" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                    <div class="stat-value" data-target="25" data-suffix="+">0</div>
+                    <div class="stat-label">Awards Won</div>
+                </div>
+                <div class="stat-box" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="stat-value" data-target="15" data-suffix="+">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title center" data-aos="fade-up">Let's Create Your Dream Space</h2>
+            <div class="contact-wrapper">
+                <div class="contact-form-wrapper" data-aos="fade-right">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <select id="projectType" name="projectType" required>
+                                <option value="">Project Type</option>
+                                <option value="residential">Residential Design</option>
+                                <option value="commercial">Commercial Spaces</option>
+                                <option value="hospitality">Hospitality</option>
+                                <option value="consultation">Consultation Only</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select id="budget" name="budget" required>
+                                <option value="">Budget Range</option>
+                                <option value="under-50k">Under $50,000</option>
+                                <option value="50k-100k">$50,000 - $100,000</option>
+                                <option value="100k-250k">$100,000 - $250,000</option>
+                                <option value="250k-plus">$250,000+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Schedule Consultation</button>
+                    </form>
+                </div>
+                <div class="contact-info" data-aos="fade-left">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Design Street<br>New York, NY 10001</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@concretechic.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Mon - Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container" data-aos="fade-up">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.184132576171!2d-73.98811768459398!3d40.75889597932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-logo">
+                    <div class="logo">
+                        <span class="logo-text">CONCRETE</span>
+                        <span class="logo-accent">CHIC</span>
+                    </div>
+                    <p>Transforming spaces into art with award-winning interior design. Creating harmonious environments that reflect your personality and lifestyle.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <p>Creating harmonious environments that reflect your personality and lifestyle.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get design inspiration and tips.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Concrete Chic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

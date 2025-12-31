@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Concrete Chic</title>
+    <meta name="description" content="Concrete Chic Dashboard - Manage your projects and account">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon.svg">
+    <link rel="shortcut icon" href="./favicon.svg">
+    <link rel="apple-touch-icon" href="./favicon.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html, body {
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: auto;
+            min-height: 100vh;
+        }
+        
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* Hide scrollbar for IE, Edge and Firefox */
+        html {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        body {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        body {
+            background: var(--accent);
+            padding: 0;
+            margin: 0;
+        }
+        
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .dashboard-header {
+            background: var(--white);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--secondary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .dashboard-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .dashboard-header-text {
+            flex: 1;
+        }
+        
+        .dashboard-header h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .dashboard-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .dashboard-header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .back-to-home-btn,
+        .logout-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--secondary);
+            background: transparent;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-accent);
+            border-radius: 0;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .back-to-home-btn:hover {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+        
+        .logout-btn {
+            background: var(--primary);
+            color: var(--secondary);
+            border-color: var(--primary);
+        }
+        
+        .logout-btn:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            border-color: var(--secondary);
+        }
+        
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-left: 4px solid var(--secondary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.2);
+        }
+        
+        .stat-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-card-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            border: 2px solid var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+        
+        .stat-card-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-card-label {
+            color: #666;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .stat-card-trend {
+            font-size: 0.85rem;
+            color: #00aa00;
+            margin-top: 0.5rem;
+        }
+        
+        .dashboard-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .dashboard-section {
+            background: var(--white);
+            padding: 2rem;
+            border-left: 4px solid var(--secondary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .dashboard-section h2 {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: stretch;
+        }
+        
+        .project-item {
+            padding: 1.5rem;
+            background: var(--accent);
+            border: 2px solid var(--subtle);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .project-item:hover {
+            border-color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .project-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .project-item-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .project-item-client {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .project-item-status {
+            padding: 0.5rem 1rem;
+            background: var(--secondary);
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .project-item-status.pending {
+            background: #ffaa00;
+            color: var(--white);
+        }
+        
+        .project-item-status.completed {
+            background: #00aa00;
+            color: var(--white);
+        }
+        
+        .project-item-details {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .project-item-details span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .activity-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: stretch;
+        }
+        
+        .activity-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--accent);
+            border-left: 3px solid var(--secondary);
+        }
+        
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border: 2px solid var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            flex-shrink: 0;
+        }
+        
+        .activity-content {
+            flex: 1;
+        }
+        
+        .activity-text {
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+        
+        .activity-time {
+            color: #666;
+            font-size: 0.85rem;
+        }
+        
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .quick-action-btn {
+            padding: 1.5rem;
+            background: var(--accent);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .quick-action-btn:hover {
+            background: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .quick-action-btn i {
+            font-size: 2rem;
+        }
+        
+        .recent-designs {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .design-card {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            border: 2px solid var(--subtle);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .design-card:hover {
+            border-color: var(--secondary);
+            transform: scale(1.05);
+        }
+        
+        .design-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .design-card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(46, 46, 46, 0.9), transparent);
+            padding: 1rem;
+            color: var(--white);
+        }
+        
+        .design-card-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .design-card-date {
+            font-size: 0.85rem;
+            color: var(--secondary);
+        }
+        
+        @media (max-width: 1024px) {
+            .dashboard-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .dashboard-section {
+                text-align: center;
+            }
+            
+            .project-list {
+                align-items: center;
+            }
+            
+            .project-item {
+                text-align: left;
+                max-width: 100%;
+            }
+            
+            .activity-list {
+                align-items: center;
+            }
+            
+            .activity-item {
+                max-width: 100%;
+            }
+            
+            .recent-designs {
+                justify-items: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard-container {
+                padding: 1rem;
+            }
+            
+            .dashboard-header {
+                text-align: center;
+            }
+            
+            .dashboard-header-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .dashboard-header-text {
+                text-align: center;
+                width: 100%;
+            }
+            
+            .dashboard-header-actions {
+                justify-content: center;
+                width: 100%;
+                flex-wrap: wrap;
+            }
+            
+            .dashboard-header h1 {
+                font-size: 2rem;
+            }
+            
+            .dashboard-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .dashboard-section {
+                text-align: center;
+            }
+            
+            .dashboard-section h2 {
+                text-align: center;
+            }
+            
+            .project-list {
+                align-items: center;
+            }
+            
+            .project-item {
+                text-align: left;
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .project-item-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .project-item-details {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+            
+            .activity-list {
+                align-items: center;
+            }
+            
+            .activity-item {
+                width: 100%;
+                max-width: 100%;
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .activity-content {
+                text-align: center;
+            }
+            
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+            
+            .recent-designs {
+                grid-template-columns: repeat(2, 1fr);
+                justify-items: center;
+            }
+            
+            .design-card {
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .dashboard-header-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .back-to-home-btn,
+            .logout-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .recent-designs {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+            
+            .design-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+            <div class="dashboard-header-content">
+                <div class="dashboard-header-text">
+                    <h1>Dashboard</h1>
+                    <p>Welcome back! Here's an overview of your projects and activities.</p>
+                </div>
+                <div class="dashboard-header-actions">
+                    <a href="index.html" class="back-to-home-btn">
+                        <i class="fas fa-home"></i>
+                        <span>Back to Home</span>
+                    </a>
+                    <a href="index.html" class="logout-btn" onclick="return confirm('Are you sure you want to logout?');">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Statistics Cards -->
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <div>
+                        <div class="stat-card-value">12</div>
+                        <div class="stat-card-label">Active Projects</div>
+                        <div class="stat-card-trend">↑ 3 this month</div>
+                    </div>
+                    <div class="stat-card-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <div>
+                        <div class="stat-card-value">8</div>
+                        <div class="stat-card-label">Completed</div>
+                        <div class="stat-card-trend">↑ 2 this month</div>
+                    </div>
+                    <div class="stat-card-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <div>
+                        <div class="stat-card-value">$245K</div>
+                        <div class="stat-card-label">Revenue</div>
+                        <div class="stat-card-trend">↑ 15% this quarter</div>
+                    </div>
+                    <div class="stat-card-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <div>
+                        <div class="stat-card-value">24</div>
+                        <div class="stat-card-label">Clients</div>
+                        <div class="stat-card-trend">↑ 5 new clients</div>
+                    </div>
+                    <div class="stat-card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="dashboard-content">
+            <!-- Projects Section -->
+            <div class="dashboard-section">
+                <h2>Recent Projects</h2>
+                <div class="project-list">
+                    <div class="project-item">
+                        <div class="project-item-header">
+                            <div>
+                                <div class="project-item-title">Modern Minimalist Living Room</div>
+                                <div class="project-item-client">Sarah Johnson</div>
+                            </div>
+                            <div class="project-item-status">In Progress</div>
+                        </div>
+                        <div class="project-item-details">
+                            <span><i class="fas fa-calendar"></i> Started: Jan 15, 2025</span>
+                            <span><i class="fas fa-clock"></i> Due: Feb 28, 2025</span>
+                            <span><i class="fas fa-dollar-sign"></i> Budget: $45,000</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-item-header">
+                            <div>
+                                <div class="project-item-title">Corporate Office Redesign</div>
+                                <div class="project-item-client">Tech Innovations Inc.</div>
+                            </div>
+                            <div class="project-item-status completed">Completed</div>
+                        </div>
+                        <div class="project-item-details">
+                            <span><i class="fas fa-calendar"></i> Completed: Jan 10, 2025</span>
+                            <span><i class="fas fa-check"></i> Final Review Done</span>
+                            <span><i class="fas fa-dollar-sign"></i> Total: $120,000</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-item-header">
+                            <div>
+                                <div class="project-item-title">Luxury Hotel Suite</div>
+                                <div class="project-item-client">Grand Hotel Group</div>
+                            </div>
+                            <div class="project-item-status pending">Pending</div>
+                        </div>
+                        <div class="project-item-details">
+                            <span><i class="fas fa-calendar"></i> Proposal Sent: Jan 20, 2025</span>
+                            <span><i class="fas fa-hourglass-half"></i> Awaiting Approval</span>
+                            <span><i class="fas fa-dollar-sign"></i> Estimated: $85,000</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-item-header">
+                            <div>
+                                <div class="project-item-title">Contemporary Kitchen Renovation</div>
+                                <div class="project-item-client">Michael Chen</div>
+                            </div>
+                            <div class="project-item-status">In Progress</div>
+                        </div>
+                        <div class="project-item-details">
+                            <span><i class="fas fa-calendar"></i> Started: Dec 20, 2024</span>
+                            <span><i class="fas fa-clock"></i> Due: Feb 15, 2025</span>
+                            <span><i class="fas fa-dollar-sign"></i> Budget: $35,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div>
+                <!-- Recent Activity -->
+                <div class="dashboard-section">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-comment"></i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-text">New message from Sarah Johnson</div>
+                                <div class="activity-time">2 hours ago</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-text">Project proposal approved</div>
+                                <div class="activity-time">5 hours ago</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-text">3D visualization completed</div>
+                                <div class="activity-time">1 day ago</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-text">Meeting scheduled with client</div>
+                                <div class="activity-time">2 days ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="dashboard-section">
+                    <h2>Quick Actions</h2>
+                    <div class="quick-actions">
+                        <a href="#" class="quick-action-btn">
+                            <i class="fas fa-plus"></i>
+                            <span>New Project</span>
+                        </a>
+                        <a href="#" class="quick-action-btn">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Add Client</span>
+                        </a>
+                        <a href="#" class="quick-action-btn">
+                            <i class="fas fa-file-invoice"></i>
+                            <span>Create Invoice</span>
+                        </a>
+                        <a href="#" class="quick-action-btn">
+                            <i class="fas fa-chart-line"></i>
+                            <span>View Reports</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recent Designs -->
+        <div class="dashboard-section">
+            <h2>Recent Design Work</h2>
+            <div class="recent-designs">
+                <div class="design-card">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80" alt="Design 1">
+                    <div class="design-card-overlay">
+                        <div class="design-card-title">Modern Living Room</div>
+                        <div class="design-card-date">Jan 15, 2025</div>
+                    </div>
+                </div>
+                
+                <div class="design-card">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80" alt="Design 2">
+                    <div class="design-card-overlay">
+                        <div class="design-card-title">Office Space</div>
+                        <div class="design-card-date">Jan 10, 2025</div>
+                    </div>
+                </div>
+                
+                <div class="design-card">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&q=80" alt="Design 3">
+                    <div class="design-card-overlay">
+                        <div class="design-card-title">Classic Interior</div>
+                        <div class="design-card-date">Jan 5, 2025</div>
+                    </div>
+                </div>
+                
+                <div class="design-card">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80" alt="Design 4">
+                    <div class="design-card-overlay">
+                        <div class="design-card-title">Hotel Lobby</div>
+                        <div class="design-card-date">Dec 28, 2024</div>
+                    </div>
+                </div>
+                
+                <div class="design-card">
+                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&q=80" alt="Design 5">
+                    <div class="design-card-overlay">
+                        <div class="design-card-title">Contemporary Home</div>
+                        <div class="design-card-date">Dec 20, 2024</div>
+                    </div>
+                </div>
+                
+                <div class="design-card">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=400&q=80" alt="Design 6">
+                    <div class="design-card-overlay">
+                        <div class="design-card-title">Creative Workspace</div>
+                        <div class="design-card-date">Dec 15, 2024</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

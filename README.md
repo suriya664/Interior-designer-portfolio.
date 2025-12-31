@@ -1,2 +1,2 @@
-# Interior-designer-portfolio.
+# Interior-designer-portfolio-web
 website
